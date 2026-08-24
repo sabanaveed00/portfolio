@@ -1,0 +1,149 @@
+/* ==========================================================================
+   Saba Naveed - Portfolio Custom CSS Variables & Animations (style.css)
+   ========================================================================== */
+
+:root {
+  /* Default Color Accent (Sunset Orange #F28C28) */
+  --accent-color: #F28C28;
+  --accent-color-hover: #FF9F43;
+  --accent-color-rgb: 242, 140, 40;
+  --accent-glow: rgba(242, 140, 40, 0.35);
+
+  /* Light Theme Default Palette */
+  --bg-page: #F8F9FA;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #F1F3F5;
+  --bg-card: #FFFFFF;
+  --text-heading: #0F172A;
+  --text-body: #334155;
+  --text-muted: #64748B;
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-accent: rgba(242, 140, 40, 0.4);
+}
+
+/* Dark Mode Palette */
+body.dark-mode,
+html.dark {
+  --bg-page: #121214;
+  --bg-surface: #18181B;
+  --bg-surface-elevated: #1E1E22;
+  --bg-card: #1E1E22;
+  --text-heading: #F8FAFC;
+  --text-body: #CBD5E1;
+  --text-muted: #94A3B8;
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-accent: rgba(242, 140, 40, 0.5);
+}
+
+/* Color Accent Variations */
+body[data-color="orange"] {
+  --accent-color: #F28C28;
+  --accent-color-hover: #FF9F43;
+  --accent-color-rgb: 242, 140, 40;
+  --accent-glow: rgba(242, 140, 40, 0.35);
+}
+body[data-color="teal"] {
+  --accent-color: #0D9488;
+  --accent-color-hover: #14B8A6;
+  --accent-color-rgb: 13, 148, 136;
+  --accent-glow: rgba(13, 148, 136, 0.35);
+}
+body[data-color="emerald"] {
+  --accent-color: #10B981;
+  --accent-color-hover: #34D399;
+  --accent-color-rgb: 16, 185, 129;
+  --accent-glow: rgba(16, 185, 129, 0.35);
+}
+body[data-color="violet"] {
+  --accent-color: #8B5CF6;
+  --accent-color-hover: #A78BFA;
+  --accent-color-rgb: 139, 92, 246;
+  --accent-glow: rgba(139, 92, 246, 0.35);
+}
+
+/* Smooth Scrolling & Base Typography */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-body);
+  font-family: 'Poppins', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ambient Radial Dot Pattern */
+.ambient-pattern {
+  background-image: radial-gradient(rgba(var(--accent-color-rgb), 0.09) 1.2px, transparent 0);
+  background-size: 28px 28px;
+}
+
+/* Typewriter Cursor animation */
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 2.5px;
+  height: 1.1em;
+  background-color: var(--accent-color);
+  margin-left: 3px;
+  vertical-align: middle;
+  animation: blinkCursor 0.9s infinite;
+}
+
+/* Auto-moving Infinite Carousels */
+@keyframes continuousScrollLeft {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes continuousScrollRight {
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.carousel-track-left {
+  display: flex;
+  width: max-content;
+  animation: continuousScrollLeft 28s linear infinite;
+  will-change: transform;
+}
+
+.carousel-track-right {
+  display: flex;
+  width: max-content;
+  animation: continuousScrollRight 32s linear infinite;
+  will-change: transform;
+}
+
+.carousel-track-left:hover,
+.carousel-track-right:hover,
+.carousel-track-paused {
+  animation-play-state: paused !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color-hover);
+}
+
+/* Progress Fill Transition */
+.progress-bar-fill {
+  width: 0%;
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}

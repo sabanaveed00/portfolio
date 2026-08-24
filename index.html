@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saba Naveed | Clinical Nutritionist & Dietitian</title>
+  <meta name="description" content="Saba Naveed - Clinical Nutritionist, Dietitian (4.0 CGPA, University of the Punjab), and Founder of ASET Health-Tech." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            heading: ['Outfit', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-color="orange" class="dark-mode bg-[var(--bg-page)] text-[var(--text-body)] transition-colors duration-300">
+
+  <!-- =========================================================================
+       1. Top Fixed Navigation Header
+       ========================================================================= -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-[var(--bg-page)]/85 backdrop-blur-md border-b border-[var(--border-subtle)] transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-6 sm:px-12 lg:px-16 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#home" class="flex items-center gap-1.5 group">
+        <span class="text-xl font-extrabold tracking-tight text-[var(--text-heading)]">
+          Saba.<span class="text-[var(--accent-color)]">.</span>
+        </span>
+        <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[var(--bg-surface-elevated)] text-[var(--accent-color)] border border-[var(--border-subtle)]">
+          RD
+        </span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-6 text-xs font-semibold text-[var(--text-muted)]">
+        <a href="#home" class="hover:text-[var(--accent-color)] transition-colors">Home</a>
+        <a href="#about" class="hover:text-[var(--accent-color)] transition-colors">About</a>
+        <a href="#services" class="hover:text-[var(--accent-color)] transition-colors">Services</a>
+        <a href="#timeline" class="hover:text-[var(--accent-color)] transition-colors">Timeline</a>
+        <a href="#portfolio" class="hover:text-[var(--accent-color)] transition-colors">Portfolio</a>
+        <a href="#skills" class="hover:text-[var(--accent-color)] transition-colors">Skills</a>
+        <a href="#contact" class="hover:text-[var(--accent-color)] transition-colors">Contact</a>
+      </nav>
+
+      <!-- Header Controls -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        
+        <!-- Color Accents Palette -->
+        <div class="flex items-center gap-1.5 p-1 rounded-full bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)]">
+          <button data-set-color="orange" class="w-3.5 h-3.5 rounded-full bg-[#F28C28] hover:scale-110 transition-transform cursor-pointer" title="Sunset Orange"></button>
+          <button data-set-color="teal" class="w-3.5 h-3.5 rounded-full bg-[#0D9488] hover:scale-110 transition-transform cursor-pointer" title="Clinical Teal"></button>
+          <button data-set-color="emerald" class="w-3.5 h-3.5 rounded-full bg-[#10B981] hover:scale-110 transition-transform cursor-pointer" title="Royal Emerald"></button>
+          <button data-set-color="violet" class="w-3.5 h-3.5 rounded-full bg-[#8B5CF6] hover:scale-110 transition-transform cursor-pointer" title="Radiant Violet"></button>
+        </div>
+
+        <!-- Dark/Light Theme Toggle -->
+        <button
+          id="theme-toggle"
+          class="w-8 h-8 rounded-full bg-[var(--bg-surface-elevated)] hover:bg-[var(--accent-color)]/20 border border-[var(--border-subtle)] flex items-center justify-center text-[var(--text-heading)] transition-all cursor-pointer"
+          title="Toggle Dark/Light Mode"
+        >
+          <i id="theme-icon" data-lucide="sun" class="w-4 h-4 text-[var(--accent-color)]"></i>
+        </button>
+
+        <!-- View Full CV Modal Button -->
+        <button
+          data-open-cv
+          class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[var(--accent-color)] text-[#121214] text-xs font-bold hover:bg-[var(--accent-color-hover)] transition-all shadow-sm cursor-pointer"
+        >
+          <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+          <span>View CV</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden w-8 h-8 rounded-full bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] flex items-center justify-center text-[var(--text-heading)] cursor-pointer"
+        >
+          <i data-lucide="menu" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-[var(--border-subtle)] bg-[var(--bg-page)] px-6 py-4 space-y-3 text-xs font-bold text-[var(--text-heading)]">
+      <a href="#home" class="block hover:text-[var(--accent-color)]">Home</a>
+      <a href="#about" class="block hover:text-[var(--accent-color)]">About</a>
+      <a href="#services" class="block hover:text-[var(--accent-color)]">Services</a>
+      <a href="#timeline" class="block hover:text-[var(--accent-color)]">Timeline</a>
+      <a href="#portfolio" class="block hover:text-[var(--accent-color)]">Portfolio</a>
+      <a href="#skills" class="block hover:text-[var(--accent-color)]">Skills</a>
+      <a href="#contact" class="block hover:text-[var(--accent-color)]">Contact</a>
+      <button data-open-cv class="w-full text-left py-1 text-[var(--accent-color)] font-extrabold">Open Resume (CV)</button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. Hero Section
+       ========================================================================= -->
+  <section id="home" class="min-h-screen h-[100dvh] relative flex flex-col items-center justify-center pt-16 sm:pt-20 pb-8 sm:pb-12 px-6 sm:px-10 overflow-hidden text-center">
+    
+    <!-- Real Photographic Mountain Scenery Background -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <img
+        src="./hero-mountain-bg.jpg"
+        alt="Atmospheric Mountain Scenery"
+        referrerpolicy="no-referrer"
+        class="w-full h-full object-cover object-center scale-105"
+      />
+      <!-- Pure Dark Cinematic Vignette (crystal clear & vivid in all modes, zero cloudy washout) -->
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-black/80"></div>
+      <div class="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/80 to-transparent"></div>
+    </div>
+
+    <div class="max-w-3xl w-full mx-auto relative z-10 flex flex-col items-center my-auto">
+      
+      <!-- Circular Avatar in Center with Clean Border -->
+      <div class="relative group mb-3 sm:mb-4">
+        <div class="absolute -inset-1 rounded-full bg-white/20 blur-md group-hover:bg-[var(--accent-color)]/40 transition-all duration-300"></div>
+        
+        <div class="w-28 h-28 sm:w-36 sm:h-36 rounded-full p-1.5 bg-white/30 backdrop-blur-sm border-2 border-white/70 shadow-2xl relative overflow-hidden flex items-center justify-center transition-all duration-300 group-hover:border-[var(--accent-color)]">
+          <div class="w-full h-full rounded-full overflow-hidden bg-neutral-900 relative">
+            <img
+              id="hero-portrait-img"
+              src="saba pfp.jpg"
+              alt="Saba Naveed"
+              class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+            />
+            <button
+              data-open-photo-manager
+              class="absolute inset-0 bg-black/65 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white gap-1 cursor-pointer backdrop-blur-xs"
+              title="Change Profile Photo"
+            >
+              <div class="w-8 h-8 rounded-full bg-[var(--accent-color)] text-[#121214] flex items-center justify-center shadow-lg">
+                <i data-lucide="camera" class="w-4 h-4"></i>
+              </div>
+              <span class="text-[9px] font-bold uppercase tracking-wider bg-black/75 px-2.5 py-0.5 rounded-full border border-white/20">Change</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Minimalist Heading: "Hi, I'm Saba Naveed" (Exact font sizes preserved) -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-1.5 drop-shadow-md">
+        Hi, I'm Saba Naveed
+      </h1>
+
+      <!-- Subtitle Role with Typewriter effect (Exact font sizes preserved) -->
+      <div class="text-sm sm:text-lg lg:text-xl font-bold tracking-widest uppercase text-neutral-200/90 mb-3.5 sm:mb-4 flex items-center justify-center min-h-[28px] drop-shadow-sm">
+        <span>I'M A&nbsp;</span>
+        <span id="typewriter-text" class="text-[var(--accent-color)] font-extrabold tracking-wider">Nutritionist & Dietitian</span>
+        <span class="cursor-blink ml-0.5"></span>
+      </div>
+
+      <!-- Social Badges (Clean Outline Badges) -->
+      <div class="flex items-center gap-2.5 sm:gap-3 mb-5 sm:mb-6 flex-wrap justify-center">
+        <a href="https://facebook.com" target="_blank" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-white/40 bg-black/30 backdrop-blur-sm text-white flex items-center justify-center text-xs font-bold hover:border-[var(--accent-color)] hover:bg-[var(--accent-color)] hover:text-[#121214] hover:-translate-y-0.5 transition-all shadow-md cursor-pointer">f</a>
+        <a href="https://twitter.com" target="_blank" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-white/40 bg-black/30 backdrop-blur-sm text-white flex items-center justify-center text-xs font-bold hover:border-[var(--accent-color)] hover:bg-[var(--accent-color)] hover:text-[#121214] hover:-translate-y-0.5 transition-all shadow-md cursor-pointer">t</a>
+        <a href="https://linkedin.com" target="_blank" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-white/40 bg-black/30 backdrop-blur-sm text-white flex items-center justify-center text-xs font-bold hover:border-[var(--accent-color)] hover:bg-[var(--accent-color)] hover:text-[#121214] hover:-translate-y-0.5 transition-all shadow-md cursor-pointer">in</a>
+        <a href="https://instagram.com" target="_blank" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-white/40 bg-black/30 backdrop-blur-sm text-white flex items-center justify-center text-xs font-bold hover:border-[var(--accent-color)] hover:bg-[var(--accent-color)] hover:text-[#121214] hover:-translate-y-0.5 transition-all shadow-md cursor-pointer">ig</a>
+        <a href="https://wa.me/923076992836" target="_blank" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-white/40 bg-black/30 backdrop-blur-sm text-white flex items-center justify-center text-xs font-bold hover:border-[var(--accent-color)] hover:bg-[var(--accent-color)] hover:text-[#121214] hover:-translate-y-0.5 transition-all shadow-md cursor-pointer">wa</a>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-3 sm:gap-3.5 flex-wrap justify-center">
+        <a
+          href="#contact"
+          class="px-6 sm:px-7 py-2.5 sm:py-3 rounded-full bg-[var(--accent-color)] hover:bg-[var(--accent-color-hover)] text-[#121214] font-extrabold text-xs sm:text-sm tracking-wide transition-all hover:-translate-y-0.5 shadow-lg shadow-[var(--accent-color)]/30 flex items-center gap-2"
+        >
+          <i data-lucide="send" class="w-4 h-4"></i>
+          <span>Let's Connect</span>
+        </a>
+
+        <button
+          data-open-cv
+          class="px-6 sm:px-7 py-2.5 sm:py-3 rounded-full bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold text-xs sm:text-sm tracking-wide backdrop-blur-md transition-all hover:-translate-y-0.5 cursor-pointer flex items-center gap-2"
+        >
+          <i data-lucide="download" class="w-4 h-4"></i>
+          <span>Download CV</span>
+        </button>
+
+        <a
+          href="#portfolio"
+          class="px-6 sm:px-7 py-2.5 sm:py-3 rounded-full bg-black/30 hover:bg-white/20 border border-white/25 text-white/90 font-bold text-xs sm:text-sm tracking-wide backdrop-blur-md transition-all hover:-translate-y-0.5 flex items-center gap-2"
+        >
+          <i data-lucide="folder-git-2" class="w-4 h-4 text-[var(--accent-color)]"></i>
+          <span>My Work</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Scroll Down Indicator -->
+    <a
+      href="#about"
+      class="absolute bottom-2.5 left-1/2 -translate-x-1/2 text-white/70 hover:text-white transition-colors animate-bounce cursor-pointer flex flex-col items-center z-10 drop-shadow"
+    >
+      <span class="text-[9px] uppercase font-bold tracking-widest mb-0.5">Explore</span>
+      <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+    </a>
+  </section>
+
+  <!-- =========================================================================
+       3. About Me Section
+       ========================================================================= -->
+  <section id="about" class="py-16 sm:py-20 px-6 sm:px-12 lg:px-16 bg-[var(--bg-surface)] text-[var(--text-body)] relative transition-colors duration-300">
+    <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-14">
+      
+      <!-- Left Column: About Clinical Card -->
+      <div class="w-full lg:w-[40%] flex justify-center items-center">
+        <div class="relative group">
+          <div class="w-60 h-60 sm:w-72 sm:h-72 rounded-3xl p-1.5 bg-[var(--accent-color)] shadow-xl relative overflow-hidden flex items-center justify-center">
+            <div class="w-full h-full rounded-[22px] overflow-hidden bg-[var(--bg-surface-elevated)] relative">
+              <img
+                src="saba naveed phtoto.jpg"
+                alt="About Saba Naveed"
+                class="w-full h-full object-cover object-center"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: About Description & Competencies -->
+      <div class="w-full lg:w-[58%] flex flex-col items-center lg:items-start text-center lg:text-left">
+        
+        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-[var(--text-heading)] mb-1.5">
+          About <span class="text-[var(--accent-color)]">Me</span>
+        </h2>
+
+        <h3 class="text-base sm:text-xl font-bold text-[var(--text-heading)] mb-3">
+          Nutritionist & Dietitian!
+        </h3>
+
+        <p class="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed mb-3">
+         Clinical Nutritionist (4.0 CGPA, University of the Punjab) with inpatient Medical Nutrition Therapy (MNT) experience across Surayya Azeem & Hameed Latif Hospitals.
+        </p>
+
+        <p class="text-xs sm:text-sm text-[var(--text-muted)] leading-relaxed mb-5">
+          Founder of ASET digital health platform, bridging clinical dietetics with modern software architecture, and active healthcare community leader raising PKR 100,000+ for cancer care.
+        </p>
+
+        <!-- Highlights Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 w-full mb-6 text-left">
+          <div class="flex items-start gap-2 p-2.5 rounded-xl bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)]">
+            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-[var(--accent-color)] shrink-0 mt-0.5"></i>
+            <span class="text-[11px] text-[var(--text-body)] font-medium">Inpatient MNT & Hospital Rotations</span>
+          </div>
+          <div class="flex items-start gap-2 p-2.5 rounded-xl bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)]">
+            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-[var(--accent-color)] shrink-0 mt-0.5"></i>
+            <span class="text-[11px] text-[var(--text-body)] font-medium">ASET Health-Tech Founder</span>
+          </div>
+          <div class="flex items-start gap-2 p-2.5 rounded-xl bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)]">
+            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-[var(--accent-color)] shrink-0 mt-0.5"></i>
+            <span class="text-[11px] text-[var(--text-body)] font-medium">Top Merit 4.0/4.0 CGPA Award</span>
+          </div>
+          <div class="flex items-start gap-2 p-2.5 rounded-xl bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)]">
+            <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-[var(--accent-color)] shrink-0 mt-0.5"></i>
+            <span class="text-[11px] text-[var(--text-body)] font-medium">PKR 100k+ Cancer Fundraising</span>
+          </div>
+        </div>
+
+        <a
+          href="#services"
+          class="px-5 py-2 rounded-full bg-[var(--accent-color)] text-[#121214] text-xs font-bold hover:bg-[var(--accent-color-hover)] transition-all flex items-center gap-1.5"
+        >
+          <span>Explore My Services</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. Services Section (Auto-Moving Line Carousel)
+       ========================================================================= -->
+  <section id="services" class="py-16 sm:py-20 bg-[var(--bg-page)] text-[var(--text-body)] relative ambient-pattern transition-colors duration-300 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 text-center">
+      
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--bg-surface-elevated)] border border-[var(--accent-color)]/30 backdrop-blur-md mb-2.5">
+        <i data-lucide="sparkles" class="w-3 h-3 text-[var(--accent-color)]"></i>
+        <span class="text-[11px] font-semibold text-[var(--text-muted)]">What I Offer</span>
+      </div>
+
+      <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-[var(--text-heading)] mb-2.5">
+        My <span class="text-[var(--accent-color)]">Services</span>
+      </h2>
+      
+      <p class="text-xs sm:text-sm text-[var(--text-muted)] max-w-xl mx-auto mb-6">
+        Clinical nutrition care, health-tech software architecture, and modern visual design.
+      </p>
+
+      <div class="flex items-center justify-center gap-3 mb-8">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] text-[11px] font-bold text-[var(--text-heading)] shadow-xs">
+          <i data-lucide="play" class="w-3 h-3 text-[var(--accent-color)]"></i>
+          <span>Auto-Moving • Hover to Pause</span>
+        </span>
+      </div>
+
+    </div>
+
+    <!-- Auto-moving Infinite Carousel Track in a Single Line -->
+    <div class="relative w-full overflow-hidden py-4">
+      <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[var(--bg-page)] to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[var(--bg-page)] to-transparent z-10 pointer-events-none"></div>
+
+      <div class="carousel-track-left flex gap-6 px-6" style="animation-duration: 30s;">
+        <!-- Card 1 -->
+        <div class="w-[280px] sm:w-[320px] shrink-0 bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] hover:border-[var(--accent-color)] rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group select-none">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <div class="w-11 h-11 rounded-xl bg-[var(--bg-surface)] border border-[var(--accent-color)]/30 flex items-center justify-center text-lg font-black text-[var(--accent-color)] group-hover:bg-[var(--accent-color)] group-hover:text-[#121214] transition-all">
+                🩺
+              </div>
+              <span class="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[var(--bg-surface)] text-[var(--accent-color)]">Clinical</span>
+            </div>
+            <h3 class="text-base font-bold text-[var(--text-heading)] mb-1.5 group-hover:text-[var(--accent-color)]">Medical Nutrition Therapy</h3>
+            <p class="text-[11px] text-[var(--text-muted)] mb-3.5">Targeted clinical diet plans for chronic diseases and metabolic conditions.</p>
+            <div class="space-y-1.5 mb-4 border-t border-[var(--border-subtle)] pt-3 text-[10.5px]">
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>Inpatient Dietary Management</span></div>
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>Renal & Diabetic Care Protocols</span></div>
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>PCOS & Hormone Meal Plans</span></div>
+            </div>
+          </div>
+          <a href="#contact" class="w-full py-2 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] text-[11px] font-bold text-center text-[var(--text-heading)] hover:bg-[var(--accent-color)] hover:text-[#121214] transition-all">Book Consultation</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="w-[280px] sm:w-[320px] shrink-0 bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] hover:border-[var(--accent-color)] rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group select-none">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <div class="w-11 h-11 rounded-xl bg-[var(--bg-surface)] border border-[var(--accent-color)]/30 flex items-center justify-center text-lg font-black text-[var(--accent-color)] group-hover:bg-[var(--accent-color)] group-hover:text-[#121214] transition-all">
+                💻
+              </div>
+              <span class="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[var(--bg-surface)] text-[var(--accent-color)]">Founder</span>
+            </div>
+            <h3 class="text-base font-bold text-[var(--text-heading)] mb-1.5 group-hover:text-[var(--accent-color)]">Health-Tech & SRS</h3>
+            <p class="text-[11px] text-[var(--text-muted)] mb-3.5">Software architecture and digital healthcare tools specification.</p>
+            <div class="space-y-1.5 mb-4 border-t border-[var(--border-subtle)] pt-3 text-[10.5px]">
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>ASET Health-Tech Architecture</span></div>
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>Software Requirement Specs (SRS)</span></div>
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>Health Logic & Algorithm Design</span></div>
+            </div>
+          </div>
+          <a href="#portfolio" class="w-full py-2 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] text-[11px] font-bold text-center text-[var(--text-heading)] hover:bg-[var(--accent-color)] hover:text-[#121214] transition-all">View Software</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="w-[280px] sm:w-[320px] shrink-0 bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] hover:border-[var(--accent-color)] rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group select-none">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <div class="w-11 h-11 rounded-xl bg-[var(--bg-surface)] border border-[var(--accent-color)]/30 flex items-center justify-center text-lg font-black text-[var(--accent-color)] group-hover:bg-[var(--accent-color)] group-hover:text-[#121214] transition-all">
+                🎨
+              </div>
+              <span class="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[var(--bg-surface)] text-[var(--accent-color)]">Creative</span>
+            </div>
+            <h3 class="text-base font-bold text-[var(--text-heading)] mb-1.5 group-hover:text-[var(--accent-color)]">UI/UX & Infographics</h3>
+            <p class="text-[11px] text-[var(--text-muted)] mb-3.5">Visual health communication, Figma UI/UX, and scientific infographics.</p>
+            <div class="space-y-1.5 mb-4 border-t border-[var(--border-subtle)] pt-3 text-[10.5px]">
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>Figma Healthcare Prototyping</span></div>
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>Patient Educational Infographics</span></div>
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>Clinical Posters & Publications</span></div>
+            </div>
+          </div>
+          <a href="#portfolio" class="w-full py-2 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] text-[11px] font-bold text-center text-[var(--text-heading)] hover:bg-[var(--accent-color)] hover:text-[#121214] transition-all">View Designs</a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="w-[280px] sm:w-[320px] shrink-0 bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] hover:border-[var(--accent-color)] rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group select-none">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <div class="w-11 h-11 rounded-xl bg-[var(--bg-surface)] border border-[var(--accent-color)]/30 flex items-center justify-center text-lg font-black text-[var(--accent-color)] group-hover:bg-[var(--accent-color)] group-hover:text-[#121214] transition-all">
+                👥
+              </div>
+              <span class="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[var(--bg-surface)] text-[var(--accent-color)]">Counseling</span>
+            </div>
+            <h3 class="text-base font-bold text-[var(--text-heading)] mb-1.5 group-hover:text-[var(--accent-color)]">Patient Counseling</h3>
+            <p class="text-[11px] text-[var(--text-muted)] mb-3.5">Empathetic one-on-one lifestyle assessment and behavioral modification.</p>
+            <div class="space-y-1.5 mb-4 border-t border-[var(--border-subtle)] pt-3 text-[10.5px]">
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>Dietary Habit Transformation</span></div>
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>Metabolic Rate & Macro Planning</span></div>
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>Long-term Wellness Strategy</span></div>
+            </div>
+          </div>
+          <a href="#contact" class="w-full py-2 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] text-[11px] font-bold text-center text-[var(--text-heading)] hover:bg-[var(--accent-color)] hover:text-[#121214] transition-all">Start Journey</a>
+        </div>
+
+        <!-- Duplicated for Infinite Smooth Loop -->
+        <!-- Card 1 Duplicated -->
+        <div class="w-[280px] sm:w-[320px] shrink-0 bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] hover:border-[var(--accent-color)] rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group select-none">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <div class="w-11 h-11 rounded-xl bg-[var(--bg-surface)] border border-[var(--accent-color)]/30 flex items-center justify-center text-lg font-black text-[var(--accent-color)] group-hover:bg-[var(--accent-color)] group-hover:text-[#121214] transition-all">
+                🩺
+              </div>
+              <span class="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[var(--bg-surface)] text-[var(--accent-color)]">Clinical</span>
+            </div>
+            <h3 class="text-base font-bold text-[var(--text-heading)] mb-1.5 group-hover:text-[var(--accent-color)]">Medical Nutrition Therapy</h3>
+            <p class="text-[11px] text-[var(--text-muted)] mb-3.5">Targeted clinical diet plans for chronic diseases and metabolic conditions.</p>
+            <div class="space-y-1.5 mb-4 border-t border-[var(--border-subtle)] pt-3 text-[10.5px]">
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>Inpatient Dietary Management</span></div>
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>Renal & Diabetic Care Protocols</span></div>
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>PCOS & Hormone Meal Plans</span></div>
+            </div>
+          </div>
+          <a href="#contact" class="w-full py-2 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] text-[11px] font-bold text-center text-[var(--text-heading)] hover:bg-[var(--accent-color)] hover:text-[#121214] transition-all">Book Consultation</a>
+        </div>
+
+        <!-- Card 2 Duplicated -->
+        <div class="w-[280px] sm:w-[320px] shrink-0 bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] hover:border-[var(--accent-color)] rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group select-none">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <div class="w-11 h-11 rounded-xl bg-[var(--bg-surface)] border border-[var(--accent-color)]/30 flex items-center justify-center text-lg font-black text-[var(--accent-color)] group-hover:bg-[var(--accent-color)] group-hover:text-[#121214] transition-all">
+                💻
+              </div>
+              <span class="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[var(--bg-surface)] text-[var(--accent-color)]">Founder</span>
+            </div>
+            <h3 class="text-base font-bold text-[var(--text-heading)] mb-1.5 group-hover:text-[var(--accent-color)]">Health-Tech & SRS</h3>
+            <p class="text-[11px] text-[var(--text-muted)] mb-3.5">Software architecture and digital healthcare tools specification.</p>
+            <div class="space-y-1.5 mb-4 border-t border-[var(--border-subtle)] pt-3 text-[10.5px]">
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>ASET Health-Tech Architecture</span></div>
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>Software Requirement Specs (SRS)</span></div>
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>Health Logic & Algorithm Design</span></div>
+            </div>
+          </div>
+          <a href="#portfolio" class="w-full py-2 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] text-[11px] font-bold text-center text-[var(--text-heading)] hover:bg-[var(--accent-color)] hover:text-[#121214] transition-all">View Software</a>
+        </div>
+
+        <!-- Card 3 Duplicated -->
+        <div class="w-[280px] sm:w-[320px] shrink-0 bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] hover:border-[var(--accent-color)] rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group select-none">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <div class="w-11 h-11 rounded-xl bg-[var(--bg-surface)] border border-[var(--accent-color)]/30 flex items-center justify-center text-lg font-black text-[var(--accent-color)] group-hover:bg-[var(--accent-color)] group-hover:text-[#121214] transition-all">
+                🎨
+              </div>
+              <span class="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[var(--bg-surface)] text-[var(--accent-color)]">Creative</span>
+            </div>
+            <h3 class="text-base font-bold text-[var(--text-heading)] mb-1.5 group-hover:text-[var(--accent-color)]">UI/UX & Infographics</h3>
+            <p class="text-[11px] text-[var(--text-muted)] mb-3.5">Visual health communication, Figma UI/UX, and scientific infographics.</p>
+            <div class="space-y-1.5 mb-4 border-t border-[var(--border-subtle)] pt-3 text-[10.5px]">
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>Figma Healthcare Prototyping</span></div>
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>Patient Educational Infographics</span></div>
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>Clinical Posters & Publications</span></div>
+            </div>
+          </div>
+          <a href="#portfolio" class="w-full py-2 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] text-[11px] font-bold text-center text-[var(--text-heading)] hover:bg-[var(--accent-color)] hover:text-[#121214] transition-all">View Designs</a>
+        </div>
+
+        <!-- Card 4 Duplicated -->
+        <div class="w-[280px] sm:w-[320px] shrink-0 bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] hover:border-[var(--accent-color)] rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group select-none">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-4">
+              <div class="w-11 h-11 rounded-xl bg-[var(--bg-surface)] border border-[var(--accent-color)]/30 flex items-center justify-center text-lg font-black text-[var(--accent-color)] group-hover:bg-[var(--accent-color)] group-hover:text-[#121214] transition-all">
+                👥
+              </div>
+              <span class="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[var(--bg-surface)] text-[var(--accent-color)]">Counseling</span>
+            </div>
+            <h3 class="text-base font-bold text-[var(--text-heading)] mb-1.5 group-hover:text-[var(--accent-color)]">Patient Counseling</h3>
+            <p class="text-[11px] text-[var(--text-muted)] mb-3.5">Empathetic one-on-one lifestyle assessment and behavioral modification.</p>
+            <div class="space-y-1.5 mb-4 border-t border-[var(--border-subtle)] pt-3 text-[10.5px]">
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>Dietary Habit Transformation</span></div>
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>Metabolic Rate & Macro Planning</span></div>
+              <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-[var(--accent-color)]"></i><span>Long-term Wellness Strategy</span></div>
+            </div>
+          </div>
+          <a href="#contact" class="w-full py-2 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] text-[11px] font-bold text-center text-[var(--text-heading)] hover:bg-[var(--accent-color)] hover:text-[#121214] transition-all">Start Journey</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. Latest Projects Portfolio (Auto-Moving Line Carousel)
+       ========================================================================= -->
+  <section id="portfolio" class="py-16 sm:py-20 bg-[var(--bg-surface)] text-[var(--text-body)] relative transition-colors duration-300 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 text-center">
+      
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--bg-surface-elevated)] border border-[var(--accent-color)]/30 backdrop-blur-md mb-2.5">
+        <i data-lucide="sparkles" class="w-3 h-3 text-[var(--accent-color)]"></i>
+        <span class="text-[11px] font-semibold text-[var(--text-muted)]">Featured Case Studies & Software</span>
+      </div>
+
+      <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-[var(--text-heading)] mb-2.5">
+        Latest <span class="text-[var(--accent-color)]">Projects</span>
+      </h2>
+      
+      <p class="text-xs sm:text-sm text-[var(--text-muted)] max-w-xl mx-auto mb-6">
+        Explore healthcare software architectures, evidence-based nutrition portals, and clinical therapeutic diet systems.
+      </p>
+
+      <div class="flex items-center justify-center gap-3 mb-8">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] text-xs font-bold text-[var(--text-heading)] shadow-xs">
+          <i data-lucide="play" class="w-3 h-3 text-[var(--accent-color)]"></i>
+          <span>Auto-Moving • Hover to Pause</span>
+        </span>
+      </div>
+
+    </div>
+
+    <!-- Auto-moving Infinite Carousel Track in a Single Line -->
+    <div class="relative w-full overflow-hidden py-4">
+      <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[var(--bg-surface)] to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[var(--bg-surface)] to-transparent z-10 pointer-events-none"></div>
+
+      <div class="carousel-track-left flex gap-6 px-6" style="animation-duration: 38s;">
+        
+        <!-- Project 1 -->
+        <div class="w-[300px] sm:w-[350px] shrink-0 bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] hover:border-[var(--accent-color)] rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group select-none">
+          <div class="relative h-48 overflow-hidden bg-black/20">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=80" alt="ASET" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-xs text-[10px] font-bold text-[var(--accent-color)] border border-white/10">Health-Tech</div>
+          </div>
+          <div class="p-4 flex flex-col flex-1 justify-between">
+            <div>
+              <h3 class="text-base font-bold text-[var(--text-heading)] mb-1 group-hover:text-[var(--accent-color)]">ASET Health-Tech Platform</h3>
+              <p class="text-[11px] font-semibold text-[var(--accent-color)] mb-2">Founder & System Architect</p>
+              <p class="text-[11.5px] text-[var(--text-muted)] leading-relaxed mb-3">Comprehensive SRS software architecture for clinical nutrition workflows and calorie computation.</p>
+            </div>
+            <button data-open-project-id="1" class="w-full py-2 rounded-xl bg-[var(--bg-surface)] hover:bg-[var(--accent-color)] hover:text-[#121214] text-[11px] font-bold text-[var(--text-heading)] border border-[var(--border-subtle)] transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+              <span>View Case Study</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="w-[300px] sm:w-[350px] shrink-0 bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] hover:border-[var(--accent-color)] rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group select-none">
+          <div class="relative h-48 overflow-hidden bg-black/20">
+            <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1000&q=80" alt="Renal Care" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-xs text-[10px] font-bold text-[var(--accent-color)] border border-white/10">Clinical MNT</div>
+          </div>
+          <div class="p-4 flex flex-col flex-1 justify-between">
+            <div>
+              <h3 class="text-base font-bold text-[var(--text-heading)] mb-1 group-hover:text-[var(--accent-color)]">Renal & Nephrology MNT Care</h3>
+              <p class="text-[11px] font-semibold text-[var(--accent-color)] mb-2">Clinical Dietitian</p>
+              <p class="text-[11.5px] text-[var(--text-muted)] leading-relaxed mb-3">Electrolyte-controlled therapeutic meal plans with strict potassium, phosphorus, and sodium monitoring.</p>
+            </div>
+            <button data-open-project-id="2" class="w-full py-2 rounded-xl bg-[var(--bg-surface)] hover:bg-[var(--accent-color)] hover:text-[#121214] text-[11px] font-bold text-[var(--text-heading)] border border-[var(--border-subtle)] transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+              <span>View Case Study</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="w-[300px] sm:w-[350px] shrink-0 bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] hover:border-[var(--accent-color)] rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group select-none">
+          <div class="relative h-48 overflow-hidden bg-black/20">
+            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1000&q=80" alt="PCOS Portal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-xs text-[10px] font-bold text-[var(--accent-color)] border border-white/10">Metabolic</div>
+          </div>
+          <div class="p-4 flex flex-col flex-1 justify-between">
+            <div>
+              <h3 class="text-base font-bold text-[var(--text-heading)] mb-1 group-hover:text-[var(--accent-color)]">Metabolic Syndrome & PCOS</h3>
+              <p class="text-[11px] font-semibold text-[var(--accent-color)] mb-2">Metabolic Dietetics</p>
+              <p class="text-[11.5px] text-[var(--text-muted)] leading-relaxed mb-3">Glycemic load optimization and macro partition systems for type-2 diabetes and PCOS stabilization.</p>
+            </div>
+            <button data-open-project-id="3" class="w-full py-2 rounded-xl bg-[var(--bg-surface)] hover:bg-[var(--accent-color)] hover:text-[#121214] text-[11px] font-bold text-[var(--text-heading)] border border-[var(--border-subtle)] transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+              <span>View Case Study</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="w-[300px] sm:w-[350px] shrink-0 bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] hover:border-[var(--accent-color)] rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group select-none">
+          <div class="relative h-48 overflow-hidden bg-black/20">
+            <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1000&q=80" alt="Cancer Drive" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-xs text-[10px] font-bold text-[var(--accent-color)] border border-white/10">Awareness</div>
+          </div>
+          <div class="p-4 flex flex-col flex-1 justify-between">
+            <div>
+              <h3 class="text-base font-bold text-[var(--text-heading)] mb-1 group-hover:text-[var(--accent-color)]">SKMCH Cancer Care Drive</h3>
+              <p class="text-[11px] font-semibold text-[var(--accent-color)] mb-2">Ambassador & Lead</p>
+              <p class="text-[11.5px] text-[var(--text-muted)] leading-relaxed mb-3">Raised PKR 100k+ with high-impact visual health infographics and cancer awareness campaigns.</p>
+            </div>
+            <button data-open-project-id="4" class="w-full py-2 rounded-xl bg-[var(--bg-surface)] hover:bg-[var(--accent-color)] hover:text-[#121214] text-[11px] font-bold text-[var(--text-heading)] border border-[var(--border-subtle)] transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+              <span>View Case Study</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="w-[300px] sm:w-[350px] shrink-0 bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] hover:border-[var(--accent-color)] rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group select-none">
+          <div class="relative h-48 overflow-hidden bg-black/20">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80" alt="Web Portal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-xs text-[10px] font-bold text-[var(--accent-color)] border border-white/10">Health-Tech</div>
+          </div>
+          <div class="p-4 flex flex-col flex-1 justify-between">
+            <div>
+              <h3 class="text-base font-bold text-[var(--text-heading)] mb-1 group-hover:text-[var(--accent-color)]">Nutrition Diagnostic Web App</h3>
+              <p class="text-[11px] font-semibold text-[var(--accent-color)] mb-2">Frontend Developer</p>
+              <p class="text-[11.5px] text-[var(--text-muted)] leading-relaxed mb-3">Interactive web application featuring instant Harris-Benedict & Mifflin-St Jeor calculators.</p>
+            </div>
+            <button data-open-project-id="5" class="w-full py-2 rounded-xl bg-[var(--bg-surface)] hover:bg-[var(--accent-color)] hover:text-[#121214] text-[11px] font-bold text-[var(--text-heading)] border border-[var(--border-subtle)] transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+              <span>View Case Study</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="w-[300px] sm:w-[350px] shrink-0 bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] hover:border-[var(--accent-color)] rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group select-none">
+          <div class="relative h-48 overflow-hidden bg-black/20">
+            <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1000&q=80" alt="Infographics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-xs text-[10px] font-bold text-[var(--accent-color)] border border-white/10">Design</div>
+          </div>
+          <div class="p-4 flex flex-col flex-1 justify-between">
+            <div>
+              <h3 class="text-base font-bold text-[var(--text-heading)] mb-1 group-hover:text-[var(--accent-color)]">Nutritional Infographics Suite</h3>
+              <p class="text-[11px] font-semibold text-[var(--accent-color)] mb-2">Visual Designer</p>
+              <p class="text-[11.5px] text-[var(--text-muted)] leading-relaxed mb-3">30+ high-resolution patient education charts designed for inpatient hospital distribution.</p>
+            </div>
+            <button data-open-project-id="6" class="w-full py-2 rounded-xl bg-[var(--bg-surface)] hover:bg-[var(--accent-color)] hover:text-[#121214] text-[11px] font-bold text-[var(--text-heading)] border border-[var(--border-subtle)] transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+              <span>View Case Study</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Duplicated Projects for Infinite Seamless Carousel Loop -->
+        <!-- Project 1 Duplicated -->
+        <div class="w-[300px] sm:w-[350px] shrink-0 bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] hover:border-[var(--accent-color)] rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group select-none">
+          <div class="relative h-48 overflow-hidden bg-black/20">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=80" alt="ASET" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-xs text-[10px] font-bold text-[var(--accent-color)] border border-white/10">Health-Tech</div>
+          </div>
+          <div class="p-4 flex flex-col flex-1 justify-between">
+            <div>
+              <h3 class="text-base font-bold text-[var(--text-heading)] mb-1 group-hover:text-[var(--accent-color)]">ASET Health-Tech Platform</h3>
+              <p class="text-[11px] font-semibold text-[var(--accent-color)] mb-2">Founder & System Architect</p>
+              <p class="text-[11.5px] text-[var(--text-muted)] leading-relaxed mb-3">Comprehensive SRS software architecture for clinical nutrition workflows and calorie computation.</p>
+            </div>
+            <button data-open-project-id="1" class="w-full py-2 rounded-xl bg-[var(--bg-surface)] hover:bg-[var(--accent-color)] hover:text-[#121214] text-[11px] font-bold text-[var(--text-heading)] border border-[var(--border-subtle)] transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+              <span>View Case Study</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2 Duplicated -->
+        <div class="w-[300px] sm:w-[350px] shrink-0 bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] hover:border-[var(--accent-color)] rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group select-none">
+          <div class="relative h-48 overflow-hidden bg-black/20">
+            <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1000&q=80" alt="Renal Care" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-xs text-[10px] font-bold text-[var(--accent-color)] border border-white/10">Clinical MNT</div>
+          </div>
+          <div class="p-4 flex flex-col flex-1 justify-between">
+            <div>
+              <h3 class="text-base font-bold text-[var(--text-heading)] mb-1 group-hover:text-[var(--accent-color)]">Renal & Nephrology MNT Care</h3>
+              <p class="text-[11px] font-semibold text-[var(--accent-color)] mb-2">Clinical Dietitian</p>
+              <p class="text-[11.5px] text-[var(--text-muted)] leading-relaxed mb-3">Electrolyte-controlled therapeutic meal plans with strict potassium, phosphorus, and sodium monitoring.</p>
+            </div>
+            <button data-open-project-id="2" class="w-full py-2 rounded-xl bg-[var(--bg-surface)] hover:bg-[var(--accent-color)] hover:text-[#121214] text-[11px] font-bold text-[var(--text-heading)] border border-[var(--border-subtle)] transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+              <span>View Case Study</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 3 Duplicated -->
+        <div class="w-[300px] sm:w-[350px] shrink-0 bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] hover:border-[var(--accent-color)] rounded-2xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group select-none">
+          <div class="relative h-48 overflow-hidden bg-black/20">
+            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1000&q=80" alt="PCOS Portal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-black/70 backdrop-blur-xs text-[10px] font-bold text-[var(--accent-color)] border border-white/10">Metabolic</div>
+          </div>
+          <div class="p-4 flex flex-col flex-1 justify-between">
+            <div>
+              <h3 class="text-base font-bold text-[var(--text-heading)] mb-1 group-hover:text-[var(--accent-color)]">Metabolic Syndrome & PCOS</h3>
+              <p class="text-[11px] font-semibold text-[var(--accent-color)] mb-2">Metabolic Dietetics</p>
+              <p class="text-[11.5px] text-[var(--text-muted)] leading-relaxed mb-3">Glycemic load optimization and macro partition systems for type-2 diabetes and PCOS stabilization.</p>
+            </div>
+            <button data-open-project-id="3" class="w-full py-2 rounded-xl bg-[var(--bg-surface)] hover:bg-[var(--accent-color)] hover:text-[#121214] text-[11px] font-bold text-[var(--text-heading)] border border-[var(--border-subtle)] transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+              <span>View Case Study</span>
+              <i data-lucide="external-link" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. Technical & Clinical Skills Progress Bars
+       ========================================================================= -->
+  <section id="skills" class="py-16 sm:py-20 px-6 sm:px-12 lg:px-16 bg-[var(--bg-page)] text-[var(--text-body)] relative ambient-pattern transition-colors duration-300">
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="text-center mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--bg-surface-elevated)] border border-[var(--accent-color)]/30 backdrop-blur-md mb-2.5">
+          <i data-lucide="award" class="w-3 h-3 text-[var(--accent-color)]"></i>
+          <span class="text-[11px] font-semibold text-[var(--text-muted)]">Proficiency & Domain Mastery</span>
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-[var(--text-heading)] mb-2.5">
+          Technical & Clinical <span class="text-[var(--accent-color)]">Skills</span>
+        </h2>
+        <p class="text-xs sm:text-sm text-[var(--text-muted)] max-w-xl mx-auto">
+          Scroll down to see animated proficiency indicators in healthcare architecture and clinical MNT.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Clinical & Leadership Block -->
+        <div class="p-6 rounded-2xl bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] space-y-5">
+          <h3 class="text-sm font-bold text-[var(--text-heading)] flex items-center gap-2">
+            <i data-lucide="stethoscope" class="w-4 h-4 text-[var(--accent-color)]"></i>
+            <span>Clinical Dietetics & Leadership</span>
+          </h3>
+
+          <!-- Skill 1 -->
+          <div>
+            <div class="flex justify-between text-xs font-bold mb-1.5">
+              <span>Medical Nutrition Therapy (MNT)</span>
+              <span class="text-[var(--accent-color)]">98%</span>
+            </div>
+            <div class="h-2 rounded-full bg-[var(--bg-surface)] overflow-hidden">
+              <div class="h-full rounded-full bg-gradient-to-r from-[var(--accent-color)] to-[var(--accent-color)]/70 progress-bar-fill" data-percent="98"></div>
+            </div>
+          </div>
+
+          <!-- Skill 2 -->
+          <div>
+            <div class="flex justify-between text-xs font-bold mb-1.5">
+              <span>Inpatient Clinical Care & Patient Counseling</span>
+              <span class="text-[var(--accent-color)]">95%</span>
+            </div>
+            <div class="h-2 rounded-full bg-[var(--bg-surface)] overflow-hidden">
+              <div class="h-full rounded-full bg-gradient-to-r from-[var(--accent-color)] to-[var(--accent-color)]/70 progress-bar-fill" data-percent="95"></div>
+            </div>
+          </div>
+
+          <!-- Skill 3 -->
+          <div>
+            <div class="flex justify-between text-xs font-bold mb-1.5">
+              <span>Healthcare Leadership & Cancer Fundraising</span>
+              <span class="text-[var(--accent-color)]">96%</span>
+            </div>
+            <div class="h-2 rounded-full bg-[var(--bg-surface)] overflow-hidden">
+              <div class="h-full rounded-full bg-gradient-to-r from-[var(--accent-color)] to-[var(--accent-color)]/70 progress-bar-fill" data-percent="96"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Health-Tech & Design Block -->
+        <div class="p-6 rounded-2xl bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] space-y-5">
+          <h3 class="text-sm font-bold text-[var(--text-heading)] flex items-center gap-2">
+            <i data-lucide="code-2" class="w-4 h-4 text-[var(--accent-color)]"></i>
+            <span>Health-Tech & Visual Design</span>
+          </h3>
+
+          <!-- Skill 4 -->
+          <div>
+            <div class="flex justify-between text-xs font-bold mb-1.5">
+              <span>Health-Tech & SRS System Architecture</span>
+              <span class="text-[var(--accent-color)]">96%</span>
+            </div>
+            <div class="h-2 rounded-full bg-[var(--bg-surface)] overflow-hidden">
+              <div class="h-full rounded-full bg-gradient-to-r from-[var(--accent-color)] to-[var(--accent-color)]/70 progress-bar-fill" data-percent="96"></div>
+            </div>
+          </div>
+
+          <!-- Skill 5 -->
+          <div>
+            <div class="flex justify-between text-xs font-bold mb-1.5">
+              <span>Frontend Development (React, HTML5, CSS3, JS)</span>
+              <span class="text-[var(--accent-color)]">90%</span>
+            </div>
+            <div class="h-2 rounded-full bg-[var(--bg-surface)] overflow-hidden">
+              <div class="h-full rounded-full bg-gradient-to-r from-[var(--accent-color)] to-[var(--accent-color)]/70 progress-bar-fill" data-percent="90"></div>
+            </div>
+          </div>
+
+          <!-- Skill 6 -->
+          <div>
+            <div class="flex justify-between text-xs font-bold mb-1.5">
+              <span>UI/UX & Health Infographics Design (Figma, Canva)</span>
+              <span class="text-[var(--accent-color)]">94%</span>
+            </div>
+            <div class="h-2 rounded-full bg-[var(--bg-surface)] overflow-hidden">
+              <div class="h-full rounded-full bg-gradient-to-r from-[var(--accent-color)] to-[var(--accent-color)]/70 progress-bar-fill" data-percent="94"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. Contact Section & Direct WhatsApp Integration
+       ========================================================================= -->
+  <section id="contact" class="py-16 sm:py-20 px-6 sm:px-12 lg:px-16 bg-[var(--bg-surface)] text-[var(--text-body)] relative transition-colors duration-300">
+    <div class="max-w-6xl mx-auto">
+      
+      <div class="text-center mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--bg-surface-elevated)] border border-[var(--accent-color)]/30 backdrop-blur-md mb-2.5">
+          <i data-lucide="send" class="w-3 h-3 text-[var(--accent-color)]"></i>
+          <span class="text-[11px] font-semibold text-[var(--text-muted)]">Get In Touch</span>
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-[var(--text-heading)] mb-2.5">
+          Contact <span class="text-[var(--accent-color)]">Me</span>
+        </h2>
+        <p class="text-xs sm:text-sm text-[var(--text-muted)] max-w-xl mx-auto">
+          Ready to discuss personalized medical nutrition therapy, clinical consultation, or health-tech collaborations?
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Left: Direct Channels -->
+        <div class="p-6 rounded-2xl bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)] space-y-5 flex flex-col justify-between">
+          <div>
+            <h3 class="text-base font-bold text-[var(--text-heading)] mb-4">Direct Contact Information</h3>
+            
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] flex items-center justify-center text-[var(--accent-color)]">
+                  <i data-lucide="phone" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <div class="text-[10px] uppercase font-bold text-[var(--text-muted)]">Call / WhatsApp</div>
+                  <a href="tel:+999999999" class="text-xs font-bold text-[var(--text-heading)] hover:text-[var(--accent-color)]">+923076992836</a>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] flex items-center justify-center text-[var(--accent-color)]">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <div class="text-[10px] uppercase font-bold text-[var(--text-muted)]">Email Address</div>
+                  <a href="mailto:sabanaveed307@gmail.com" class="text-xs font-bold text-[var(--text-heading)] hover:text-[var(--accent-color)]">sabanaveed307@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] flex items-center justify-center text-[var(--accent-color)]">
+                  <i data-lucide="map-pin" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <div class="text-[10px] uppercase font-bold text-[var(--text-muted)]">Location</div>
+                  <div class="text-xs font-bold text-[var(--text-heading)]">Lahore,Punjab,Pakistan</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            id="whatsapp-direct-btn"
+            class="w-full py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white text-xs font-bold flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer"
+          >
+            <i data-lucide="message-square" class="w-4 h-4"></i>
+            <span>Chat on WhatsApp (+923076992836)</span>
+          </button>
+        </div>
+
+        <!-- Right: Inquiry Form -->
+        <div class="p-6 rounded-2xl bg-[var(--bg-surface-elevated)] border border-[var(--border-subtle)]">
+          <div id="form-alert" class="hidden mb-4 p-3 rounded-xl bg-[var(--accent-color)]/20 border border-[var(--accent-color)] text-xs font-bold text-[var(--text-heading)]"></div>
+
+          <form id="contact-form" class="space-y-4">
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)] mb-1">Your Full Name</label>
+              <input
+                type="text"
+                id="contact-name"
+                required
+                placeholder="Dr. Sarah John / Client"
+                class="w-full px-3.5 py-2.5 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] text-xs text-[var(--text-heading)] outline-none focus:border-[var(--accent-color)] transition-colors"
+              />
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)] mb-1">Email Address</label>
+              <input
+                type="email"
+                required
+                placeholder="sarah@example.com"
+                class="w-full px-3.5 py-2.5 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] text-xs text-[var(--text-heading)] outline-none focus:border-[var(--accent-color)] transition-colors"
+              />
+            </div>
+
+            <div>
+              <label class="block text-[11px] font-bold uppercase tracking-wider text-[var(--text-muted)] mb-1">Consultation / Project Details</label>
+              <textarea
+                rows="3"
+                required
+                placeholder="Tell me about your dietary goals, clinical care requirements, or health-tech idea..."
+                class="w-full px-3.5 py-2.5 rounded-xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] text-xs text-[var(--text-heading)] outline-none focus:border-[var(--accent-color)] transition-colors"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full py-2.5 rounded-xl bg-[var(--accent-color)] hover:bg-[var(--accent-color-hover)] text-[#121214] text-xs font-bold transition-all cursor-pointer shadow-sm"
+            >
+              Send Consultation Request
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. Footer
+       ========================================================================= -->
+  <footer class="py-8 border-t border-[var(--border-subtle)] bg-[var(--bg-page)] text-center text-xs text-[var(--text-muted)]">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <p>© 2026 SabaNaveed | Clinical Nutritionist & Dietitian</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <button data-open-cv class="hover:text-[var(--accent-color)] cursor-pointer">Curriculum Vitae</button>
+        <a href="#home" class="hover:text-[var(--accent-color)]">Back to Top</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button
+    id="back-to-top"
+    class="fixed bottom-6 right-6 w-10 h-10 rounded-full bg-[var(--accent-color)] text-[#121214] flex items-center justify-center shadow-xl opacity-0 pointer-events-none transition-all duration-300 z-30 cursor-pointer"
+    title="Back to Top"
+  >
+    <i data-lucide="arrow-up" class="w-4 h-4 font-bold"></i>
+  </button>
+
+  <!-- =========================================================================
+       9. CV / Resume Modal Popup
+       ========================================================================= -->
+  <div id="cv-modal" class="hidden fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto">
+    <div class="bg-[var(--bg-surface-elevated)] text-[var(--text-body)] rounded-3xl max-w-2xl w-full border border-[var(--border-subtle)] shadow-2xl p-6 sm:p-8 my-8 relative">
+      <button data-close-cv-modal class="absolute top-4 right-4 w-7 h-7 rounded-full bg-[var(--bg-surface)] hover:bg-[var(--accent-color)] hover:text-[#121214] flex items-center justify-center text-[var(--text-muted)] transition-all cursor-pointer">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <div class="border-b border-[var(--border-subtle)] pb-4 mb-5">
+        <h2 class="text-2xl font-extrabold text-[var(--text-heading)]">Saba Naveed</h2>
+        <p class="text-xs font-bold text-[var(--accent-color)]">Clinical Nutritionist • Registered Dietitian • Health-Tech Founder</p>
+        <p class="text-[11px] text-[var(--text-muted)] mt-1">University of the Punjab (4.0/4.0 CGPA) • sabanaveed307@gmail.com • +92 307 6992836</p>
+      </div>
+
+      <div class="space-y-4 text-xs">
+        <div>
+          <h4 class="font-bold text-[var(--text-heading)] uppercase tracking-wider text-[11px] text-[var(--accent-color)] mb-1">Education</h4>
+          <p class="font-bold text-[var(--text-heading)]">BS Food Science & Human Nutrition — 4.0 / 4.0 CGPA</p>
+          <p class="text-[var(--text-muted)]">University of the Punjab, Lahore (Top Merit Distinction)</p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-[var(--text-heading)] uppercase tracking-wider text-[11px] text-[var(--accent-color)] mb-1">Experience & Health-Tech Leadership</h4>
+          <p class="font-bold text-[var(--text-heading)]">Founder & System Architect — ASET Health-Tech</p>
+          <p class="text-[var(--text-muted)]">Engineered software requirement specifications (SRS), clinical nutrition calculating engines, and user interfaces.</p>
+          
+          <p class="font-bold text-[var(--text-heading)] mt-2">Clinical Inpatient Nutritionist — Surayya Azeem & Hameed Latif Hospitals</p>
+          <p class="text-[var(--text-muted)]">Conducted 100+ patient counseling sessions, enteral formulations, and nephrology electrolyte meal plans.</p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-[var(--text-heading)] uppercase tracking-wider text-[11px] text-[var(--accent-color)] mb-1">Honors & Philanthropy</h4>
+          <p class="text-[var(--text-muted)]">• Raised PKR 100,000+ for cancer treatment drives at Shaukat Khanum Memorial Cancer Hospital.</p>
+          <p class="text-[var(--text-muted)]">• Academic Roll of Honor for 4.0 CGPA across all semesters.</p>
+        </div>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-[var(--border-subtle)] flex items-center justify-end gap-3">
+        <button data-close-cv-modal class="px-4 py-1.5 rounded-full bg-[var(--bg-surface)] text-xs font-semibold text-[var(--text-heading)] border border-[var(--border-subtle)] cursor-pointer">Close</button>
+        <button onclick="window.print()" class="px-4 py-1.5 rounded-full bg-[var(--accent-color)] text-[#121214] text-xs font-bold cursor-pointer">Print / Save PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       10. Project Case Study Modal Popup
+       ========================================================================= -->
+  <div id="project-modal" class="hidden fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto">
+    <div class="bg-[var(--bg-surface-elevated)] text-[var(--text-body)] rounded-3xl max-w-2xl w-full border border-[var(--border-subtle)] shadow-2xl p-6 relative my-8">
+      <button data-close-project-modal class="absolute top-4 right-4 w-7 h-7 rounded-full bg-[var(--bg-surface)] hover:bg-[var(--accent-color)] hover:text-[#121214] flex items-center justify-center text-[var(--text-muted)] transition-all cursor-pointer">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+      <div id="project-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       11. Photo Manager / Upload Modal
+       ========================================================================= -->
+  <div id="photo-modal" class="hidden fixed inset-0 z-50 items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto">
+    <div class="bg-[var(--bg-surface-elevated)] text-[var(--text-body)] rounded-3xl max-w-md w-full border border-[var(--border-subtle)] shadow-2xl p-6 relative my-8 text-center">
+      <button data-close-photo-modal class="absolute top-4 right-4 w-7 h-7 rounded-full bg-[var(--bg-surface)] hover:bg-[var(--accent-color)] hover:text-[#121214] flex items-center justify-center text-[var(--text-muted)] transition-all cursor-pointer">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <div class="w-12 h-12 rounded-2xl bg-[var(--accent-color)]/20 text-[var(--accent-color)] mx-auto flex items-center justify-center mb-3">
+        <i data-lucide="camera" class="w-6 h-6"></i>
+      </div>
+      <h3 class="text-lg font-bold text-[var(--text-heading)] mb-1">Update Profile Picture</h3>
+      <p class="text-xs text-[var(--text-muted)] mb-5">Select a photo from your computer to update the circular avatar.</p>
+
+      <label class="block p-4 border-2 border-dashed border-[var(--accent-color)] rounded-2xl bg-[var(--bg-surface)] hover:bg-[var(--accent-color)]/10 transition-colors cursor-pointer mb-4">
+        <i data-lucide="upload" class="w-6 h-6 text-[var(--accent-color)] mx-auto mb-2"></i>
+        <span class="text-xs font-bold text-[var(--text-heading)]">Click to choose image file</span>
+        <input type="file" id="photo-file-input" accept="image/*" class="hidden" />
+      </label>
+    </div>
+  </div>
+
+  <!-- Vanilla JavaScript Controller -->
+  <script src="script.js"></script>
+</body>
+</html>
